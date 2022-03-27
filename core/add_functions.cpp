@@ -55,6 +55,7 @@
 #include "func_ferrersbar2d.h"
 #include "func_flatsky.h"
 #include "func_tilted-sky-plane.h"
+#include "func_spiral.h"
 // modules requiring GSL:
 //#ifndef NO_GSL
 #include "func_edge-on-disk.h"
@@ -161,7 +162,10 @@ void PopulateFactoryMap( map<string, factory*>& input_factory_map )
   
   CoreSersic::GetClassShortName(classFuncName);
   input_factory_map[classFuncName] = new funcobj_factory<CoreSersic>();
-  
+
+  SpiralBranch::GetClassShortName(classFuncName);
+  input_factory_map[classFuncName] = new funcobj_factory<SpiralBranch>();
+
   GenExponential::GetClassShortName(classFuncName);
   input_factory_map[classFuncName] = new funcobj_factory<GenExponential>();
   
